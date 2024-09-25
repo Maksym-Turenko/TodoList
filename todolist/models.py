@@ -1,5 +1,4 @@
 from django.db import models
-from pip._vendor.rich.markup import Tag
 
 
 class Tag(models.Model):
@@ -7,6 +6,7 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Task(models.Model):
     content = models.CharField(max_length=200)
