@@ -44,6 +44,9 @@ class TaskUpdateView(UpdateView):
     template_name = "todo/add_task.html"
     success_url = reverse_lazy("home")
 
+    def get_success_url(self):
+        return reverse_lazy("home")
+
 
 class TagUpdateView(UpdateView):
     model = Tag
@@ -51,17 +54,26 @@ class TagUpdateView(UpdateView):
     template_name = "todo/add_tag.html"
     success_url = reverse_lazy("tag_list")
 
+    def get_success_url(self):
+        return reverse_lazy("tag_list")
+
 
 class TaskDeleteView(DeleteView):
     model = Task
     template_name = "todo/delete_confirm.html"
     success_url = reverse_lazy("home")
 
+    def get_success_url(self):
+        return reverse_lazy("home")
+
 
 class TagDeleteView(DeleteView):
     model = Tag
     template_name = "todo/delete_confirm.html"
     success_url = reverse_lazy("tag_list")
+
+    def get_success_url(self):
+        return reverse_lazy("tag_list")
 
 
 def toggle_task_status(request, task_id):
