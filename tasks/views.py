@@ -7,8 +7,8 @@ from django.views.generic import (
     DeleteView,
 )
 
-from todolist.models import Task, Tag
-from todolist.forms import TaskForm, TagForm
+from tasks.models import Task, Tag
+from tasks.forms import TaskForm, TagForm
 
 
 class TaskListView(ListView):
